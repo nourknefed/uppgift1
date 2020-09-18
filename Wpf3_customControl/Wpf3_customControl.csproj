@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="35ef1ffd0c34c657868d8db596b3cd7c.jpg" />
+    <None Remove="nour1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpfApp_Designview\WpfApp_Designview.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="35ef1ffd0c34c657868d8db596b3cd7c.jpg" />
+    <Resource Include="nour1.jpg" />
+  </ItemGroup>
+
+</Project>
