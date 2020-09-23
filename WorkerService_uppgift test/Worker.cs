@@ -82,7 +82,7 @@ namespace WorkerService_uppgift_test
                 
 
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(10*1000, stoppingToken);
+                await Task.Delay(60*1000, stoppingToken);
             }
         }
     }
