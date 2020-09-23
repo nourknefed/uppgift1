@@ -17,8 +17,7 @@ namespace WorkerService_uppgift_test
         private readonly ILogger<Worker> _logger;
         private string url = "https://api.openweathermap.org/data/2.5/onecall?lat=59.27412&lon=15.2066&exclude=current-daily-hourly&appid=bea7b0cf12273cc11febf06fd50ac80f";
         private HttpClient client;
-        private HttpResponseMessage result;
-        private string JsonString;
+       
         
 
         public Worker(ILogger<Worker> logger)
@@ -46,16 +45,13 @@ namespace WorkerService_uppgift_test
                 var response = await client.GetAsync(url);
 
                 
-               
-               
-              
                 try
                 {
                     if (response.IsSuccessStatusCode)
                     {
-                        //Console.WriteLine("Requst message information \n\n" + response.RequestMessage + "\n");
+                        Console.WriteLine("Requst message information \n\n" + response.RequestMessage + "\n");
                         var result = await response.Content.ReadAsStringAsync();
-                        var data = JsonConvert.DeserializeObject<Jsonmeddlande>(result);
+                        var data = JsonConvert.DeserializeObject<Rootobject>(result);
 
 
                         _logger.LogInformation("Tempretaure is: {temp}",data.current.temp);
@@ -64,9 +60,9 @@ namespace WorkerService_uppgift_test
                         Tem = data.current.temp;
 
 
-                        //Console.WriteLine(data.current.temp);
+                        
 
-                        if (Tem >= 290)
+                        if (Tem >= 300)
                         {
                             Console.WriteLine("The temperature is so high");
                         

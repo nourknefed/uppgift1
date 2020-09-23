@@ -4,8 +4,8 @@ using System.Text;
 
 namespace WorkerService_uppgift_test
 {
-  
-    public class Jsonmeddlande
+
+    public class Rootobject
     {
         public float lat { get; set; }
         public float lon { get; set; }
@@ -62,7 +62,13 @@ namespace WorkerService_uppgift_test
         public float wind_speed { get; set; }
         public int wind_deg { get; set; }
         public Weather1[] weather { get; set; }
-        public int pop { get; set; }
+        public float pop { get; set; }
+        public Rain rain { get; set; }
+    }
+
+    public class Rain
+    {
+        public float _1h { get; set; }
     }
 
     public class Weather1
@@ -117,4 +123,6 @@ namespace WorkerService_uppgift_test
         public string description { get; set; }
         public string icon { get; set; }
     }
+
 }
+
