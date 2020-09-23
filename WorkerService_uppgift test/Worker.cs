@@ -59,8 +59,7 @@ namespace WorkerService_uppgift_test
                         double Tem;
                         Tem = data.current.temp;
 
-
-                        
+                                            
 
                         if (Tem >= 300)
                         {
@@ -79,7 +78,7 @@ namespace WorkerService_uppgift_test
                     _logger.LogInformation($"{ex.Message}");
                 }
 
-                
+               
 
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(60*1000, stoppingToken);
