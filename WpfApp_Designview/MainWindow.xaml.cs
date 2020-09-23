@@ -51,5 +51,15 @@ namespace WpfApp_Designview
         {
             DataContext = new Calender_Model();
         }
+
+        private void btnTasks_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -10,41 +10,41 @@
       
         
         mc:Ignorable="d"
-        Title=" Mail Client" Height="700" Width="1000" WindowStartupLocation="CenterScreen" FontFamily="Californian FB" AllowsTransparency="True" WindowStyle="None">
+        Title=" Mail Client" Height="660" Width="1000" WindowStartupLocation="CenterScreen" FontFamily="Californian FB" WindowStyle="None" ResizeMode="CanResizeWithGrip" SizeToContent="Width">
 
     <Window.Resources>
         <DataTemplate x:Name="ContactviewTemplate" DataType="{x:Type models:ContactModel}">
             <views:ContactViewControl DataContext="{Binding}"/>
-            
-           
+
+
         </DataTemplate>
-        
-        
+
+
         <DataTemplate x:Name="MessageviewTemplate" DataType="{x:Type models:MessageModelcs}">
             <views:MessageViewControl DataContext="{Binding}"/>
 
 
         </DataTemplate>
-        
+
         <DataTemplate x:Name="Calendertemplate" DataType="{x:Type models:Calender_Model}">
             <views:Calender_View_Control DataContext="{Binding}"/>
 
 
         </DataTemplate>
     </Window.Resources>
-    
-    
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50" />
             <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="400" />
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+
 
         </Grid.ColumnDefinitions>
 
 
-       
+
         <Grid Background="#FF3F7BBC" Grid.Column="0"/>
         <Grid  x:Name="MainMenu_grid" Background="#FF91ABCB" Grid.Column="1">
             <StackPanel Height="200" VerticalAlignment="Bottom">
@@ -53,13 +53,13 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="20"/>
                             <ColumnDefinition Width="*"/>
-                         
+
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" FontFamily="Segoe MDL2 Assets"  Text="&#xE716;" FontSize="16" Foreground="White" HorizontalAlignment="Left" />
                         <TextBlock Grid.Column="1" Text="Contacts" Margin="10,0,0,0" FontSize="16" Foreground="White"/>
-                        
+
                     </Grid>
-                    
+
                 </Button>
                 <Button x:Name="btnmessage" Click="btnmessage_Click" Background="Transparent" Opacity="0.99" BorderThickness="0"  Padding="10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" >
                     <Grid>
@@ -70,7 +70,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" FontFamily="Segoe MDL2 Assets"  Text="&#xE715;" FontSize="16" Foreground="White" />
                         <TextBlock Grid.Column="1" Text="Messages" Margin="10,0,0,0" FontSize="16" Foreground="White"/>
-                       
+
 
                     </Grid>
                 </Button>
@@ -87,7 +87,7 @@
 
                     </Grid>
                 </Button>
-                <Button Background="Transparent" Opacity="0.99" BorderThickness="0"  Padding="10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Click="Button_Click">
+                <Button x:Name="btnTasks" Click="btnTasks_Click" Background="Transparent" Opacity="0.99" BorderThickness="0"  Padding="10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" >
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="20"/>
@@ -100,7 +100,7 @@
 
                     </Grid>
                 </Button>
-                <Button Background="Transparent" Opacity="0.99" BorderThickness="0"  Padding="10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Click="Button_Click">
+                <Button x:Name="btnSettings" Click="btnSettings_Click"  Background="Transparent" Opacity="0.99" BorderThickness="0"  Padding="10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="20"/>
@@ -120,15 +120,15 @@
 
         </Grid>
         <Grid x:Name="SubMenu_grid"  Background="#FFEDEDEE" Grid.Column="2">
-         
+
 
 
         </Grid>
-      
-        
-        
+
+
+
         <ContentControl Grid.Column="2" Content="{Binding}"/>
-        
+
 
 
 
